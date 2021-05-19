@@ -36,7 +36,7 @@ RSpec.describe Zoo do
   it 'has a complete address' do
     zoo = Zoo.new("Bronx Zoo", "2300 Southern Blvd", "Bronx", "NY", "10460")
 
-    expect(zoo.street).to eq("2300 Southern Blvd Bronx, NY 10460")
+    expect(zoo.address).to eq("2300 Southern Blvd Bronx, NY 10460")
   end
 
   it 'starts with no inventory' do
