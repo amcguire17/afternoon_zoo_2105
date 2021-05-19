@@ -19,4 +19,29 @@ class Zoo
     @inventory << animal
     @animal_count += 1
   end
+
+  def animals_older_than(weeks)
+    animal_by_age = []
+    @inventory.each do |animal|
+      if animal.weeks > weeks
+        animal_by_age << animal
+      end
+    end
+    animal_by_age
+  end
+
+  def total_weight_of_animals
+    total_weight = 0
+    @inventory.each do |animal|
+      total_weight += animal.pounds
+    end
+    total_weight
+  end
+
+  def details
+    details = {
+      "total_weight" => total_weight_of_animals,
+      "street_address" => @street
+    }
+  end
 end
