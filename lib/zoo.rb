@@ -44,4 +44,16 @@ class Zoo
       "street_address" => @street
     }
   end
+
+  def animals_sorted_by_weight
+    @inventory.sort_by { |animal| -animal.pounds }
+  end
+
+  def animal_hash
+    animal_hash = Hash.new { |hash, key| hash[key] = []}
+    @inventory.select do |animal|
+      animal_hash[animal.kind[0].upcase] << animal
+    end
+    animal_hash
+  end
 end
